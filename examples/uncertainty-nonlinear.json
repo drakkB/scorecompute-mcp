@@ -1,0 +1,132 @@
+{
+ "recorded_at": "2026-11-02T09:39:30.767793+00:00",
+ "server_release": "0.17.1",
+ "arguments": {
+  "expression": "x1 * x2",
+  "variables": [
+   {
+    "name": "x1",
+    "value": 1,
+    "distribution": "normal",
+    "standard_uncertainty": 1,
+    "unit": ""
+   },
+   {
+    "name": "x2",
+    "value": 1,
+    "distribution": "normal",
+    "standard_uncertainty": 1,
+    "unit": ""
+   }
+  ],
+  "coverage": 0.95,
+  "samples": 200000,
+  "seed": 7
+ },
+ "structured": {
+  "contract_version": "0.1.0",
+  "status": "evaluated",
+  "verdict": "linearization_inadequate",
+  "diagnostic": null,
+  "unit": "1",
+  "dimension": "1",
+  "gum": {
+   "value": 1,
+   "standard_uncertainty": 1.4142135623730951,
+   "coverage_factor": 1.959963986120195,
+   "expanded_uncertainty": 2.7718076509340124,
+   "interval": [
+    -1.7718076509340124,
+    3.7718076509340124
+   ]
+  },
+  "monte_carlo": {
+   "draws": 200000,
+   "finite_draws": 200000,
+   "nonfinite_fraction": 0,
+   "mean": 0.9917114807823371,
+   "standard_deviation": 1.731517193609199,
+   "symmetric_interval": [
+    -1.744741348335197,
+    5.294808742654364
+   ],
+   "shortest_interval": [
+    -1.998506604626448,
+    4.9671020860898745
+   ],
+   "blocks": 10,
+   "stability": {
+    "mean_standard_error": 0.0035585134340418824,
+    "standard_deviation_standard_error": 0.0027595699295887353,
+    "low_standard_error": 0.011450522992292697,
+    "high_standard_error": 0.01619590059392617,
+    "numerical_tolerance": 0.05,
+    "stable": true
+   }
+  },
+  "validation": {
+   "numerical_tolerance": 0.05,
+   "low_difference": 0.027066302598815373,
+   "high_difference": 1.523001091720352,
+   "adequate": false
+  },
+  "budget": [
+   {
+    "name": "x1",
+    "unit": "1",
+    "value": 1,
+    "distribution": "normal",
+    "standard_uncertainty": 1,
+    "sensitivity": 1,
+    "contribution": 1,
+    "variance_share": 0.5
+   },
+   {
+    "name": "x2",
+    "unit": "1",
+    "value": 1,
+    "distribution": "normal",
+    "standard_uncertainty": 1,
+    "sensitivity": 1,
+    "contribution": 1,
+    "variance_share": 0.5
+   }
+  ],
+  "correlation_variance_share": 0,
+  "recommended": {
+   "method": "monte_carlo",
+   "value": 0.9917114807823371,
+   "standard_uncertainty": 1.731517193609199,
+   "interval": [
+    -1.744741348335197,
+    5.294808742654364
+   ]
+  },
+  "statement": "y = 1.0 1, standard uncertainty 1.7 1; 95% coverage interval [-1.7, 5.3] 1 (Monte Carlo, 200000 draws). The first-order GUM interval differs by more than the numerical tolerance and should not be used for this model.",
+  "notes": [],
+  "assumptions": [
+   "The model is exactly the supplied expression; unlisted influences and definitional uncertainty are not included.",
+   "Inputs are independent unless a correlation is declared; correlations are supported between normal inputs only.",
+   "normal: standard_uncertainty is the standard deviation. uniform and triangular: half_width is the half-width of a symmetric distribution centred on value.",
+   "The first-order coverage factor comes from the normal distribution; no Welch\u2013Satterthwaite effective degrees of freedom are applied.",
+   "Numeric literals are dimensionless. Affine temperature units (\u00b0C, \u00b0F) are refused; use K.",
+   "The Monte Carlo interval is probabilistically symmetric; the shortest interval is reported separately."
+  ],
+  "coverage": 0.95,
+  "samples": 200000,
+  "seed": 7,
+  "method": "First-order GUM propagation (JCGM 100:2008) with exact forward-mode derivatives; Monte Carlo propagation (JCGM 101:2008) with SplitMix64, Box\u2013Muller and 10 independently seeded blocks; JCGM 101 \u00a78 validation of the first-order interval; block spread checked against the 2-significant-digit numerical tolerance.",
+  "engine": "rust-cpu",
+  "elapsed_ms": 34.541212,
+  "provenance": {
+   "tool": "propagate_uncertainty",
+   "server": "scorecompute",
+   "client": {
+    "name": "geo-guide-example",
+    "version": "1"
+   },
+   "identity_source": "MCP clientInfo (self-reported)",
+   "model": null
+  }
+ }
+}
